@@ -118,7 +118,7 @@ install() {
   mkdir -p out
   tar -xzf $bin_name.tar.gz -C ./out && rm $bin_name.tar.gz
   ls -lh out
-  sudo cp ./out/$bin_name /usr/local/bin/
+  cp ./out/$bin_name /usr/local/bin/
   cd .. && rm -Rf $tmpdir
 }
 
