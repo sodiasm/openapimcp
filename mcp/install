@@ -116,9 +116,8 @@ install() {
   fi
 
   mkdir -p out
-  tar -xzf $bin_name.tar.gz -C ./out && rm $bin_name.tar.gz
-  ls -lh out
-  cp ./out/$bin_name /usr/local/bin/
+  tar -xzf $bin_name.tar.gz -C /usr/local/bin/ && rm $bin_name.tar.gz
+  ls -lh /usr/local/bin/
   cd .. && rm -Rf $tmpdir
 }
 
