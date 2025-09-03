@@ -118,6 +118,7 @@ install() {
   mkdir -p out
   tar -xzf $bin_name.tar.gz -C /usr/local/bin/ && rm $bin_name.tar.gz
   ls -lh /usr/local/bin/
+  pwd
   cd .. && rm -Rf $tmpdir
 }
 
