@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 set -u
 
-repo='longportapp/openapi'
+repo='sodiasm/openapi'
 app_name='LongPort MCP'
 bin_name='longport-mcp'
 tmpdir=.tmp_install
+
+#for render.com
+homedir=/opt/render/project/src/
 
 if [[ ${OS:-} = Windows_NT ]]; then
     echo 'error: Please install using Windows Subsystem for Linux'
@@ -115,10 +118,10 @@ install() {
     exit 1
   fi
 
-  mkdir -p out
-  tar -xzf $bin_name.tar.gz -C ./out && rm $bin_name.tar.gz
-  ls -lh out
-  cp ./out/$bin_name /usr/local/bin/
+  tar -xzf $bin_name.tar.gz -C $homedir && rm $bin_name.tar.gz
+  ls -lh $homedir
+  pwd
+  cd .. && rm -Rf $tmpdir
   pwd
   cd .. && rm -Rf $tmpdir
 }
@@ -132,7 +135,7 @@ install $@
 # Test install
 if [ -x "$(command -v $bin_name)" ]; then
   info ""
-  success "$app_name was installed successfully to \`/usr/local/bin/$bin_name\`."
+  success "$app_name was installed successfully to \`/opt/render/project/src/$bin_name\`."
   info "Run \`$bin_name -h\` to get help."
   info ""
 else
