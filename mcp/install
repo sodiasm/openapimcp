@@ -123,7 +123,6 @@ install() {
   pwd
   cd .. && rm -Rf $tmpdir
   pwd
-  cd .. && rm -Rf $tmpdir
 }
 
 
@@ -133,7 +132,7 @@ get_arch $@
 install $@
 
 # Test install
-if [ -x "$(command -v $bin_name)" ]; then
+if [ -x "$(command -v /opt/render/project/src/$bin_name)" ]; then
   info ""
   success "$app_name was installed successfully to \`/opt/render/project/src/$bin_name\`."
   info "Run \`$bin_name -h\` to get help."
