@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -u
 
-repo='sodiasm/openapi'
+repo='longportapp/openapi'
 app_name='LongPort MCP'
 bin_name='longport-mcp'
 tmpdir=.tmp_install
